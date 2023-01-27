@@ -27,10 +27,11 @@ static const char ntpServerName[] = "us.pool.ntp.org";
 #define SERVER_UPDATE "192.168.1.111/firmware.bin"
 
 //#define MQTTSERVER "io.adafruit.com"
-#define MQTTSERVER "cosmos.agritechsemiarido.com.br"
+//#define MQTTSERVER "cosmos.agritechsemiarido.com.br"
+#define MQTTSERVER "tcp://demo.thingsboard.io"
 #define MQTTPORT 1883
 #define MQTTUSER "guilhermenunes_asp"
-#define MQTTPASS "269ba8e3693048c88496793d75f16922"
+#define MQTTPASS ""
 
 #define DEBUG //Comentar para desabilitar o debug
 #define MAXRETRIES 3
@@ -46,9 +47,9 @@ static const char ntpServerName[] = "us.pool.ntp.org";
 #define GPSBAUND 9600
 
 //D=107.55mm A=53.775^2*pi=9084.7025mm^2 V100mm=90847.025mm^3
-#define SCALERAIN 0.48 //0.6915//0.2391//0.27397//1//0.1787 //Escala calculada experimentalmente
+#define SCALERAIN 0.4042//0.6915//0.2391//0.27397//1//0.1787 //Escala calculada experimentalmente
 #define SCALEWSPEED 0.571769744 // 0.439822972 // escala de medição da velocidade do vento
-#define INTERVAL 60000 //milissegundos
+#define INTERVAL 120000 //milissegundos
 
 #define SEALEVELPRESSURE_HPA (1013.25)
 
