@@ -19,7 +19,7 @@ const float constDirection[16] = {0.411, 1.377, 1.202, 2.774, 2.721, 0.331, 2.24
 // st float constDirection[16] = {0.411, 0.584, 0.223,   0.331, 0.124, 0.824, 0.749,  1.980, 1.803, 2.540, 2.248, 2.879, 2.721, 2.774, 1.202,  1.377};
 
 const char* mqtt_server = "demo.thingsboard.io"; // Endereço do servidor AWS
-#define TOKEN "xrZdjuSbYAiYe5qkKiJW" // Token do dispositivo
+#define TOKEN "NXaPGNp0ZCHkwgBbhcWM" // Token do dispositivo
 #define MSG_BUFFER_SIZE (150) // Tamanho de buffer
 char msg[MSG_BUFFER_SIZE]; // String msg
 
@@ -53,7 +53,7 @@ void reconnect_mqtt() {
     }
 	if(try_reconnect_mqtt > 15) {
 		//reinicia o dispositivo	
-		ESP.restart();
+		//ESP.restart();
 	}
   }
 }
@@ -537,6 +537,7 @@ void setup()
 
 	attachInterrupt(SPEEDPIN, anemometro, FALLING);
 	attachInterrupt(PLUVPIN, pluviometro, FALLING);
+	pinMode(D3, INPUT_PULLUP);
 
 	WiFi.mode(WIFI_STA);
 	WiFiManager wifiManager;
@@ -664,7 +665,7 @@ void setup()
 
 void loop()
 {
-	verificaConexao();
+	//verificaConexao();
 	if (!client.connected()) { // Caso não esteja conectado ao servidor MQTT
 		reconnect_mqtt(); // Reconecta
 	}
